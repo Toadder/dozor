@@ -837,10 +837,6 @@ body.lock {
      object-position: bottom;
 }
 
-.slide-intro__bg img:nth-child(2) {
-  display: none;
-}
-
 .slide-intro__inner {
   position: relative;
   z-index: 2;
@@ -1018,10 +1014,6 @@ body.lock {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.question__bg img:nth-child(2) {
-  display: none;
 }
 
 .question__title {
@@ -1847,14 +1839,6 @@ body.lock {
     display: block;
   }
 
-  .slide-intro__bg img:nth-child(1) {
-    display: none;
-  }
-
-  .slide-intro__bg img:nth-child(2) {
-    display: block;
-  }
-
   .slide-intro__inner {
     padding: 45px 0;
   }
@@ -2015,19 +1999,6 @@ body.lock {
   }
 
   .question__bg picture:nth-child(2) {
-    display: block;
-  }
-
-  .question__bg img {
-    -o-object-position: top;
-       object-position: top;
-  }
-
-  .question__bg img:nth-child(1) {
-    display: none;
-  }
-
-  .question__bg img:nth-child(2) {
     display: block;
   }
 }
