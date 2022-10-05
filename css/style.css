@@ -781,6 +781,12 @@ body.lock {
   padding: 5px;
 }
 
+.insurance__item picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .insurance__item img {
   max-width: 100%;
 }
