@@ -967,6 +967,152 @@ body.lock {
      object-fit: cover;
 }
 
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 11, 11, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.4s ease;
+}
+
+.popup._open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup._open .popup__content {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__content {
+  background: #fff;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 783px;
+  padding: 90px 80px 70px;
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  top: 42px;
+  right: 39px;
+  cursor: pointer;
+  fill: #0b0b0b;
+  transition: opacity 0.3s ease 0s;
+}
+
+.popup__title {
+  color: #0b0b0b;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.popup__text {
+  color: #0b0b0b;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.popup__text a {
+  text-decoration: underline;
+  display: inline;
+  transition: opacity 0.4s ease 0s;
+  color: inherit;
+}
+
+.form-popup {
+  margin-bottom: 45px;
+}
+
+.form-popup__field:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.form-popup__field input {
+  background-color: white;
+  padding: 17px 39px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  color: #0b0b0b;
+  width: 100%;
+}
+
+.form-popup__field input::-moz-placeholder {
+  color: rgba(11, 11, 11, 0.5);
+  font-size: inherit;
+}
+
+.form-popup__field input::placeholder {
+  color: rgba(11, 11, 11, 0.5);
+  font-size: inherit;
+}
+
+.form-popup__text {
+  margin-top: 3px;
+  color: #0b0b0b;
+  font-size: 16px;
+  line-height: 1.25;
+  margin-bottom: 26px;
+}
+
+.form-popup__button {
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  background-color: #2bbad2;
+  line-height: 1;
+  padding: 19.5px 106px;
+  margin: 0 auto;
+  display: block;
+  transition: background-color 0.4s ease 0s;
+}
+
+.pay-popup {
+  margin-bottom: 35px;
+}
+
+.pay-popup__content {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #0b0b0b;
+  margin-bottom: 15px;
+}
+
+.pay-popup__content p:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.pay-popup__images {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pay-popup__img img {
+  max-width: 100%;
+}
+
 .principle {
   padding: 83px 0;
 }
@@ -1104,6 +1250,145 @@ body.lock {
   text-align: center;
   transition: background-color 0.4s ease 0s;
   color: white;
+}
+
+.rates {
+  padding-bottom: 90px;
+}
+
+.rates__mobile {
+  display: none;
+}
+
+.rates__title {
+  margin-bottom: 67px;
+}
+
+.rates__rate {
+  margin-bottom: 145px;
+}
+
+.rates__rate .rates__row {
+  grid-template-columns: 49.9% repeat(2, 1fr);
+}
+
+.rates__mode .rates__row {
+  grid-template-columns: 36.5% repeat(4, 1fr);
+}
+
+.rates__row {
+  display: grid;
+  gap: 2px;
+}
+
+.rates__row:nth-child(odd) .rates__item {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.rates__item {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  line-height: 130%;
+  justify-content: center;
+  padding: 10px;
+}
+
+.rates__item:first-child {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.rates__label {
+  justify-content: flex-start;
+}
+
+.rates__header {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  font-family: "SongerSemiexpanded";
+  text-align: center;
+}
+
+.rates__price {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.rates__price .rates__item:first-child {
+  background-color: transparent;
+}
+
+.rates__price .rates__item:not(:first-child) {
+  background-color: #2bbad2;
+}
+
+.rates__text {
+  margin-top: 60px;
+  font-size: 16px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rates__text p:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.tabs-rates:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.tabs-rates__headers {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow-x: auto;
+  padding: 0 15px 15px;
+}
+
+.tabs-rates__tab {
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+  font-family: "SongerSemiexpanded";
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease 0s, border-color 0.3s ease;
+}
+
+.tabs-rates__item {
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+.tabs-rates__item:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.tabs-rates__price {
+  margin: 0 15px;
+  background-color: #2bbad2;
+  text-align: center;
+  font-weight: 700;
+  padding: 13.5px 5px;
+  margin-top: 15px;
+}
+
+.tabs__header_active {
+  color: white;
+  border-color: white;
+}
+
+.tabs__items {
+  display: none;
+}
+
+.tabs__items_active {
+  display: block;
 }
 
 .response__title {
@@ -1444,6 +1729,35 @@ body.lock {
     padding: 30px 0;
   }
 
+  .popup__content {
+    padding: 60px;
+  }
+
+  .popup__close {
+    top: 30px;
+    right: 30px;
+  }
+
+  .popup__title {
+    margin-bottom: 30px;
+  }
+
+  .form-popup {
+    margin-bottom: 30px;
+  }
+
+  .form-popup__field input {
+    padding: 15px 35px;
+  }
+
+  .form-popup__text {
+    margin-bottom: 25px;
+  }
+
+  .pay-popup {
+    margin-bottom: 30px;
+  }
+
   .principle {
     padding: 50px 0;
   }
@@ -1468,6 +1782,47 @@ body.lock {
 
   .question__form {
     max-width: 100%;
+  }
+
+  .rates {
+    padding-bottom: 50px;
+  }
+
+  .rates__title {
+    margin-bottom: 50px;
+  }
+
+  .rates__rate {
+    margin-bottom: 70px;
+  }
+
+  .rates__rate .rates__row {
+    grid-template-columns: 45% 1fr 1fr;
+  }
+
+  .rates__mode .rates__row {
+    grid-template-columns: 32.5% repeat(4, 1fr);
+  }
+
+  .rates__item:first-child {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .rates__item {
+    font-size: 15px;
+  }
+
+  .rates__header {
+    font-size: 17px;
+  }
+
+  .rates__price {
+    font-size: 18px;
+  }
+
+  .rates__text {
+    margin-top: 50px;
   }
 
   .response__title {
@@ -1931,6 +2286,65 @@ body.lock {
     border-right: 1px solid rgba(255, 255, 255, 0.5);
   }
 
+  .popup__content {
+    padding: 50px 20px 25px;
+  }
+
+  .popup__close {
+    top: 23px;
+    right: 23px;
+  }
+
+  .popup__title {
+    margin-bottom: 16px;
+  }
+
+  .popup__text {
+    font-size: 12px;
+  }
+
+  .form-popup {
+    margin-bottom: 28px;
+  }
+
+  .form-popup__field:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .form-popup__field input {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .form-popup__text {
+    margin-top: 18px;
+    font-size: 12px;
+    margin-bottom: 29px;
+  }
+
+  .form-popup__button {
+    width: 100%;
+    font-size: 14px;
+    padding: 15.5px 0;
+  }
+
+  .pay-popup {
+    margin-bottom: 22px;
+  }
+
+  .pay-popup__content p:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  .pay-popup__content {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .pay-popup__images {
+    gap: 5px;
+  }
+
   .principle {
     padding: 30px 0;
   }
@@ -1984,6 +2398,41 @@ body.lock {
   .question__btn {
     font-size: 12px;
     padding: 14px 0;
+  }
+
+  .rates {
+    padding-bottom: 8px;
+  }
+
+  .rates__container {
+    padding: 0;
+  }
+
+  .rates__desktop {
+    display: none;
+  }
+
+  .rates__mobile {
+    display: block;
+  }
+
+  .rates .crumbs {
+    padding: 0 15px;
+  }
+
+  .rates__title {
+    margin-bottom: 21px;
+    padding: 0 15px;
+  }
+
+  .rates__text {
+    padding: 0 15px;
+    margin-top: 34px;
+    font-size: 12px;
+  }
+
+  .rates__text p:not(:last-child) {
+    margin-bottom: 15px;
   }
 
   .response__title {
@@ -2057,6 +2506,10 @@ body.lock {
     background-color: #2bbad2;
   }
 
+  .header__burger.header__burger_active .header__burger-inner:hover span {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
   .header__phone:hover {
     color: #2bbad2;
     fill: #2bbad2;
@@ -2069,6 +2522,18 @@ body.lock {
 
   .header__pay:hover {
     fill: #2bbad2;
+  }
+
+  .popup__close:hover {
+    opacity: 0.7;
+  }
+
+  .popup__text a:hover {
+    opacity: 0.7;
+  }
+
+  .form-popup__button:hover {
+    background-color: #54c8dc;
   }
 
   .question__file:hover {
