@@ -769,6 +769,7 @@ body.lock {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 38px;
+  grid-auto-rows: 1fr;
 }
 
 .insurance__item {
@@ -778,7 +779,7 @@ body.lock {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 8px;
 }
 
 .insurance__item picture {
